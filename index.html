@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=, initial-scale=1.0" />
+    <title>BookSelf WebApps</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container-all">
+      <header>
+        <nav class="flex-row">
+          <div class="fries-menu flex-row">
+            <input type="checkbox" />
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <div class="nav-mobile">
+            <div class="nav-mobile-titles flex-row">
+              <h1 class="title-color">BukuKu</h1>
+              <div class="close-button icon" title="close">X</div>
+            </div>
+            <ul class="flex-row">
+              <li><a href="#" class="nav-link clr-text">Beranda</a></li>
+            </ul>
+          </div>
+          <h1 class="nav-title title-color">BukuKu</h1>
+          <div class="profile-img">
+            <img src="assets/profile.jpeg" alt="profile" class="img" />
+          </div>
+        </nav>
+      </header>
+      <main>
+        <!-- <h2 class="quote title-color">Never Stop Reading</h2> -->
+        <section class="form">
+          <div class="header-content">
+            <h2 class="title">Tambakan Buku Favorit Mu</h2>
+            <p class="paragraph-text">Tulis Detail dari Buku Favorit mu.</p>
+          </div>
+
+          <form id="form">
+            <div class="input-container drop-container">
+              <figure>
+                <img id="chosen-image" class="img" />
+                <figcaption class="chosen-image-info paragraph-text"></figcaption>
+              </figure>
+              <div class="drop flex-row">
+                <i class="fa-solid fa-images drop-icon"></i>
+                <p class="paragraph-text drop-text">Drag atau tambahkan foto sampul</p>
+                <div class="or-icon flex-row">
+                  <span class="line"></span>
+                  <span class="or">or</span>
+                  <span class="line"></span>
+                </div>
+
+                <label for="file-upload " class="btn">Telusuri File</label>
+                <input type="file" class="bookFormImg" name="book-image" id="file-upload" accept="image/*" />
+              </div>
+            </div>
+
+            <div class="input-container">
+              <input type="text" class="FormBooktitle form-input" id="nama-buku" class="input" required />
+              <label for="nama-buku" class="paragraph-text caption-nama">Judul Buku...</label>
+            </div>
+
+            <div class="input-container">
+              <input type="text" class="FormBookAuthor form-input" id="Penulis" class="input" required />
+              <label for="Penulis" class="paragraph-text caption-nama">Nama Penulis Buku...</label>
+            </div>
+
+            <div class="input-container">
+              <input type="text" class="tahun-terbit form-input" id="tahun-terbit" class="input" maxlength="4" required />
+              <label for="tahun-terbit" class="tahun-terbit-caption paragraph-text caption-nama">Tahun terbit...</label>
+            </div>
+
+            <button type="submit" class="btn form-btn" name="button">Submit!</button>
+          </form>
+        </section>
+
+        <section class="main-header">
+          <h2 class="quote title-color">Buku adalah jendela dunia</h2>
+
+          <div class="search-wrap">
+            <input type="text" placeholder="Cari..." id="searchbar" />
+            <i class="fa-solid fa-magnifying-glass search-icon"></i>
+          </div>
+          <div class="books-genre">
+            <button type="submit" class="btn">Horor</button>
+            <button type="submit" class="btn">Comedy</button>
+            <button type="submit" class="btn">Fantasy</button>
+            <button type="submit" class="btn">Novel</button>
+            <button type="submit" class="btn">Romantic</button>
+          </div>
+        </section>
+
+        <!-- *Section buku lanjutkan mebaca -->
+        <div class="container read">
+          <h2 class="title-color">Baru Ditambahkan</h2>
+
+          <div id="currently-wrapper">
+            <div class="currently-reading">
+              <!-- <div class="books flex-row">
+                <div class="book-img">
+                  <img src="assets/Book-1.jpeg" alt="Book-1" class="img" />
+                </div>
+                <div class="book-info">
+                  <h4 class="book-title">Lunar Storm</h4>
+                  <p class="author book-info-author">ikhlasdansantai</p>
+                  <p class="year book-info-year">2020</p>
+                </div>
+                <div class="complete-or-not-button flex-row">
+                  <i class="fa-solid fa-check check-button"></i>
+                </div>
+              </div> -->
+
+              <!-- Content Should Appear here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- *Section buku Yang Sudah dibaca -->
+        <div class="container">
+          <h2 class="title-color">Buku yang sudah dibaca</h2>
+
+          <div id="currently-wrapper">
+            <div class="currently-reading">
+              <!-- Content Should Appear Here -->
+            </div>
+          </div>
+        </div>
+
+        <!-- *Section Rekomendasi Untukmu -->
+        <div class="container">
+          <h2 class="title-color">Rekomendasi Untukmu</h2>
+
+          <div id="currently-wrapper">
+            <div class="currently-reading">
+              <div class="books flex-row book-fav">
+                <div class="book-img">
+                  <img src="assets/Asbunayah.jpg" alt="Asbunayah" class="img" />
+                </div>
+                <div class="book-info">
+                  <h4 class="book-title">Asbunayah</h4>
+                  <p class="author">Pidi Baiq</p>
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="books flex-row book-fav">
+                <div class="book-img">
+                  <img src="assets/Dr-Stone.jpeg" alt="Book-1" class="img" />
+                </div>
+                <div class="book-info">
+                  <h4 class="book-title">Dr Stone</h4>
+                  <p class="author">Riichiro Inagaki & Boichi</p>
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="books flex-row book-fav">
+                <div class="book-img">
+                  <img src="assets/FMA.jpeg" alt="Book-1" class="img" />
+                </div>
+                <div class="book-info">
+                  <h4 class="book-title">FullMetal Alchemist</h4>
+                  <p class="author">Hiromu Arakawa</p>
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="books flex-row book-fav">
+                <div class="book-img">
+                  <img src="assets/ErwinRommel.jpg" alt="Book-1" class="img" />
+                </div>
+                <div class="book-info">
+                  <h4 class="book-title">Infantry Attacks</h4>
+                  <p class="author">Erwin Rommel</p>
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+
+              <div class="books flex-row book-fav">
+                <div class="book-img">
+                  <img src="assets/Lookism.jpeg" alt="Book-1" class="img" />
+                </div>
+                <div class="book-info">
+                  <h4 class="book-title">Lookism</h4>
+                  <p class="author">Park Tae Joon</p>
+                </div>
+                <div class="stars">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="books-content">
+          <div class="books-content-button flex-row">
+            <i class="fa-solid fa-arrow-left back-button icon"></i>
+            <i class="fa-solid fa-ellipsis-vertical edit-content-button-icon icon"></i>
+          </div>
+          <div class="books-content-button-option">
+            <p class="paragraph-text">Edit isi Buku</p>
+          </div>
+          <div class="books-image flex-row">
+            <img src="assets/Asbunayah.jpg" alt="Asbunayah" class="img book-image" />
+          </div>
+          <div class="books-content-info">
+            <h2 class="title book-fav-title">Asbunayah</h2>
+            <p class="paragraph-text book-fav-author">Pidi Baiq</p>
+            <p class="paragraph-text paragraph-edit-content">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto expedita ullam velit libero laudantium adipisci nam autem ad rerum, vel quam amet minus placeat labore, nulla alias sint excepturi eligendi?
+            </p>
+            <div class="audio-play flex-row">
+              <i class="fa-solid fa-play"></i>
+              <span>Mainkan Audio</span>
+            </div>
+            <div class="books-social-media flex-row">
+              <a href="https://dribbble.com/shots/11009606-Audible-Books-App-Concept" class="icon-link flex-row"><i class="fa-brands fa-instagram"></i></a>
+              <a href="#" class="icon-link flex-row"><i class="fa-brands fa-facebook"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="books-infos"></div>
+      </main>
+    </div>
+    <script src="js/formScript.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

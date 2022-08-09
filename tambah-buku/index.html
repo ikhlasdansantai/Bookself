@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah buku</title>
+    <link rel="stylesheet" href="style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container-all">
+      <header>
+        <nav class="flex-row">
+          <a href="../index.html">
+            <i class="fa-solid fa-arrow-left back-btn icon"></i>
+          </a>
+          <h1>BukuKu</h1>
+        </nav>
+
+        <div class="header-content">
+          <div class="book-img-header">
+            <img src="assets/tiny-student-sitting-book-pile-reading-flat-illustration/Tiny_student_sitting_on_book_pile_and_reading-removebg-preview.png " alt="tiny-student-img" class="img" />
+          </div>
+          <h2 class="title">Tambakan Buku Favorit Mu</h2>
+          <p class="paragraph-text">Tulis Detail dari Buku Favorit mu.</p>
+        </div>
+      </header>
+      <main>
+        <form action="../index.html" id="form" method="GET">
+          <div class="container drop-container">
+            <figure>
+              <img id="chosen-image" class="img" />
+              <figcaption class="chosen-image-info paragraph-text"></figcaption>
+            </figure>
+            <div class="drop flex-row">
+              <i class="fa-solid fa-images drop-icon"></i>
+              <p class="paragraph-text drop-text">Drag atau tambahkan foto sampul</p>
+              <div class="or-icon flex-row">
+                <span class="line"></span>
+                <span class="or">or</span>
+                <span class="line"></span>
+              </div>
+
+              <label for="file-upload " class="btn">Telusuri File</label>
+              <input type="file" name="book-image" id="file-upload" accept="image/*" />
+            </div>
+          </div>
+
+          <div class="container">
+            <input type="text" name="title" id="nama-buku" class="input" required />
+            <label for="nama-buku" class="paragraph-text caption-nama">Judul Buku...</label>
+          </div>
+
+          <div class="container">
+            <input type="text" name="author" id="Penulis" class="input" required />
+            <label for="Penulis" class="paragraph-text caption-nama">Nama Penulis Buku...</label>
+          </div>
+
+          <div class="container">
+            <input type="text" name="tahun-terbit" id="tahun-terbit" class="input" maxlength="4" required />
+            <label for="tahun-terbit" class="tahun-terbit-caption paragraph-text caption-nama">Tahun terbit...</label>
+          </div>
+
+          <button type="submit" class="btn" name="button">Submit!</button>
+        </form>
+      </main>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
