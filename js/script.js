@@ -11,7 +11,22 @@ closeButton.addEventListener("click", () => {
   document.body.style.overflow = "inherit";
 });
 
-// Fav Book Content Edit
+// *User Add Book IMG
+document.getElementsByClassName("img-form-btn")[0].addEventListener("click", () => {
+  contentNotAvailableAlert();
+});
+
+function contentNotAvailableAlert() {
+  Swal.fire({
+    imageUrl: "https://i.kym-cdn.com/entries/icons/mobile/000/028/232/hamster.jpg",
+    imageWidth: "100%",
+    imageHeight: 200,
+    title: "Belum bisa di gunakan",
+    text: "butuh waktu buat ngerjainnya bg sorry :V",
+  });
+}
+
+// *Fav Book Content Edit
 const booksContent = document.getElementsByClassName("books-content")[0];
 const container = document.querySelectorAll(".container");
 const bookFavourites = document.querySelectorAll(".book-fav");
@@ -60,13 +75,29 @@ for (let i = 0; i < bookFavourites.length; i++) {
 
   bookFavourites[i].addEventListener("click", () => {
     document.getElementsByClassName("books-content")[0].classList.add("show");
-    booksContent.style.maxHeight = "maxcontent";
+    booksContent.style.minHeight = "maxcontent";
+    document.body.style.minHeight = "maxcontent";
+    hiddenContent();
     window.scrollTo({ top: 0, behavior: "smooth" });
     setTimeout(showContent, 900);
   });
 }
+// ======================================================= //
 
-// Function Untuk mengubah isi konten dari buku favorit ketika di klik
+const recommendationBooks = document.getElementById("currently-wrapper");
+const formContent = document.getElementById("form");
+
+function hiddenContent() {
+  recommendationBooks.style.display = "none";
+  formContent.style.display = "none";
+}
+
+function showHiddenContent() {
+  recommendationBooks.style.display = "block";
+  formContent.style.display = "block";
+}
+
+// *Function Untuk mengubah isi konten dari buku favorit ketika di klik
 function changeBookFavContent(title, author, text) {
   const bookFavTitle = document.getElementsByClassName("book-fav-title")[0];
   const bookFavAuthor = document.getElementsByClassName(" book-fav-author")[0];
@@ -110,8 +141,13 @@ backButton.addEventListener("click", () => {
   document.body.style.maxHeight = "auto";
   document.body.style.overflow = "inherit";
   hideContent();
+  showHiddenContent();
 });
 
+const audioPlayButtons = document.getElementsByClassName("audio-play")[0];
+audioPlayButtons.addEventListener("click", () => {
+  contentNotAvailableAlert();
+});
 // Real Case
 const books = [];
 const RENDER_EVENT = "render-book";

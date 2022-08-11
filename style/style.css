@@ -47,7 +47,9 @@ ul.flex-row li:focus {
   display: block;
   max-width: 100%;
 }
-
+.title {
+  font-size: 2.2rem;
+}
 .title-color {
   color: var(--Very-light-gray);
 }
@@ -188,7 +190,6 @@ main {
 }
 .header-content h2 {
   max-width: 15ch;
-  font-size: 2rem;
 }
 .header-content p {
   max-width: 20ch;
@@ -321,7 +322,6 @@ input {
 }
 
 .quote {
-  /* max-width: 10ch; */
   font-size: 2.2rem;
   max-width: 15ch;
   line-height: 1.7;
@@ -363,6 +363,10 @@ input {
   color: #333;
 }
 
+/* *Main - header */
+.main-header {
+  margin: 5rem 0;
+}
 .books-genre {
   display: grid;
   grid-auto-flow: column;
@@ -381,7 +385,6 @@ input {
   letter-spacing: 0.5px;
   color: var(--Very-Dark-Grayish-Blue);
 }
-
 /* *Books Section */
 .container {
   margin-top: 3rem;
@@ -408,9 +411,6 @@ input {
   border-radius: 1rem;
   flex-direction: column;
   color: #000;
-}
-
-.book-fav {
   cursor: pointer;
 }
 
@@ -496,12 +496,12 @@ input {
   right: 0;
   bottom: 0;
   z-index: -99;
+  min-height: 100vh;
   transform: translateY(-200%);
   opacity: 0;
   transition: 1s;
-  /* box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5); */
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.5);
 }
-
 /* 
   *Animasi ketika User menklik buku, buku akan tampil  
                                                       */
@@ -510,6 +510,7 @@ input {
   opacity: 1;
   display: inherit;
   z-index: 99;
+  height: max-content;
 }
 
 .books-content-button {
@@ -565,6 +566,7 @@ input {
   padding: 0.5rem 0;
   align-items: center;
   gap: 1rem;
+  cursor: pointer;
 }
 
 .book-social-media {
